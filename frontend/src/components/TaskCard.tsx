@@ -8,7 +8,7 @@ import TaskModal from "./TaskModal";
 import { useAppDispatch } from "@/redux/hook";
 import { deleteTask } from "@/redux/reducer/task";
 
-const TaskCard = ({ task, index }) => {
+const TaskCard = ({ task, index }: TaskCardProps) => {
   const dispatch = useAppDispatch();
   const [isModal, setModal] = useState(false);
   const [task_, setTask_] = useState<any>();
@@ -44,19 +44,19 @@ const TaskCard = ({ task, index }) => {
     }
   };
   const handleEditTask = async (taskId: string) => {
-      try {
-        const result:any = await getTask(taskId);
-        if (result.data && result.data.length > 0) {
-          setTask_(result.data[0]);
-          onToggleModal();
-        }
-      } catch (error) {
-        console.error("Failed to fetch task:", error);
+    try {
+      const result: any = await getTask(taskId);
+      if (result.data && result.data.length > 0) {
+        setTask_(result.data[0]);
+        onToggleModal();
       }
+    } catch (error) {
+      console.error("Failed to fetch task:", error);
+    }
   };
   return (
     <li
-      ref={drag}
+      ref={drag as unknown as React.LegacyRef<HTMLLIElement>}
       className={`mb-4 p-4 relative border rounded-md bg-[#F9F9F9] ${
         isDragging ? "opacity-50" : ""
       }`}
@@ -94,3 +94,7 @@ const TaskCard = ({ task, index }) => {
 };
 
 export default TaskCard;
+type TaskCardProps = {
+  task: any;
+  index: number;
+};

@@ -19,7 +19,10 @@ const TaskColumn = ({ category, tasks, onDropTask }: TaskColumnProps) => {
     onToggleModal();
   };
   return (
-    <div ref={drop} className={` ${isOver ? "bg-gray-200" : ""}`}>
+    <div
+      ref={drop as unknown as React.LegacyRef<HTMLDivElement>}
+      className={` ${isOver ? "bg-gray-200" : ""}`}
+    >
       <ul className="min-h-[500px]">
         {tasks.map((task: any, index: number) => (
           <TaskCard key={task._id} task={task} index={index} />

@@ -46,7 +46,13 @@ const RightModule = () => {
       </div>
       <div className="flex gap-2 px-4">
         <div className="flex gap-2 rounded-md py-1 items-center bg-[#FFFFFF]">
-          <Image src={opinion.src} width={76} height={50} alt="" className="w-[76px] h-[50px]" />
+          <Image
+            src={opinion.src}
+            width={76}
+            height={50}
+            alt=""
+            className="w-[76px] h-[50px]"
+          />
           <div className="flex flex-col">
             <div className="text-[16px] font-semibold text-[#757575]">
               Introducing tags
@@ -86,8 +92,8 @@ const RightModule = () => {
               Access Anywhere
             </div>
             <div className="text-[#868686] text-[14px]">
-              Sync your notes across all devices. Stay productive whether you're
-              on your phone, tablet, or computer.
+              Sync your notes across all devices. Stay productive whether
+              you are on your phone, tablet, or computer.
             </div>
           </div>
         </div>
