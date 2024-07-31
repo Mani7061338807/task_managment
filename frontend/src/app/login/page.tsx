@@ -23,7 +23,7 @@ export default function Home() {
         router.push("/taskboard");
       }
     } catch (error: any) {
-      toast.error(error.message);
+      toast.error(error?.response?.data?.error || error.message);
       console.log(error);
     }
   };
