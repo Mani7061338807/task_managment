@@ -67,6 +67,8 @@ const RightModule = () => {
           <Image
             src={share_link_img.src}
             alt=""
+            width={76}
+            height={50}
             className="w-[76px] h-[50px]"
           ></Image>
           <div className="flex flex-col">
@@ -92,8 +94,8 @@ const RightModule = () => {
               Access Anywhere
             </div>
             <div className="text-[#868686] text-[14px]">
-              Sync your notes across all devices. Stay productive whether
-              you are on your phone, tablet, or computer.
+              Sync your notes across all devices. Stay productive whether you
+              are on your phone, tablet, or computer.
             </div>
           </div>
         </div>
